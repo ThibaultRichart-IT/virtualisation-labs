@@ -15,13 +15,15 @@ Ce laboratoire a pour objectif de prendre en main l'administration d'un système
 
 ## Déroulement du laboratoire
 
+
 ### Étape 1
 
 Identifier le systéme : 
 
 Executer différentes commandes sur l'invit de commande, observer les resultat et ce qu'il indique.
 
-Whoami : 
+Whoami : <img width="707" height="497" alt="image" src="https://github.com/user-attachments/assets/772302a8-3a01-4be6-bfc9-1eeec5cd610e" />
+
 
 
 
