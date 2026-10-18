@@ -77,36 +77,127 @@ cd / + ls : cd / s'utilise pour changer de répertoire, et ls Liste le contenu d
 
 Je remarque également que cd.. recul d'un dossier, et cd ~ recul jusqu'au dossier de base.
 
+Etape 3 : Testez des commandes avec 'ls' et voir ce qu'il contient : 
+
+/home : Accéde au dossier 'Thibault'
+
+<img width="384" height="50" alt="image" src="https://github.com/user-attachments/assets/9feab3d4-ec16-4d22-9ca8-1e19d62a70de" />
+
+/etc : Liste de contenue du répertoire 'etc' qui est la configuration global du système Linux. 
+
+<img width="384" height="50" alt="image" src="https://github.com/user-attachments/assets/5c2c1f50-f154-46e5-9a8e-4f5338391bf1" />
+
+/var/log : Affiche les historiques des journaux d'activité.
+
+/bin : Affiche les fichiers de commandes exécutable du dossier 'bin'.
 
 
-### REPRENDRE AU NIVEAU DE LA QUESTION 3 DU DOC. ###
+<img width="778" height="165" alt="image" src="https://github.com/user-attachments/assets/e09fbfc0-2042-4830-b841-5fc4eba8d742" />
 
-**Observation :** [Explication du résultat obtenu.]
 
-### Étape 2.1
+/tmp : Affiche les fichiers temporaire qui seront effacé au prochain redémarrage. 
 
-[Sous-étape ou test de vérification complémentaire.]
+<img width="778" height="165" alt="image" src="https://github.com/user-attachments/assets/bf36794a-2f6e-4ce1-8508-a0017f1a2ece" />
 
-<img width="600" alt="Capture étape 2.1" src="[LIEN_DE_TON_IMAGE_GITHUB]" />
 
-**Observation :** [Analyse du comportement de l'équipement ou du paquet.]
+### Étape 3 : Manipuler des fichiers et des dossiers : Création d'un espace de travail et manipulez quelques fichiers.
 
-## Commandes utilisées
 
-<img width="800" alt="Tableau des commandes" src="[LIEN_DE_TON_IMAGE_GITHUB]" />
+<img width="679" height="415" alt="image" src="https://github.com/user-attachments/assets/830713fd-60c5-4f3d-ac7d-3db5eda7b206" />
 
-*(Optionnel si tu n'as pas de capture : tu peux aussi lister tes commandes dans un bloc de code texte).*
+Explication rapide de chaque étape : 
 
-## Ce que j'ai appris
+1. cd ~ Me positionne dans le répertoire personnel de l'utilisateur : ici 'home'
+2. mkdir Mon_Portfolio Créer un nouveau dossier nommé 'MonPortfolio'
+3. cd Mon_Portfolio : Entre dans le dossier Mon_Portfolio
+4. touch fichier1.txt : Créer un fichier vide nommé 'fichier1.txt'
+5. echo "Bienvenue sur mon Port Folio" > fichier1.txt : Ecrit le texte entre " " dans 'fichier1.txt' et écrase le contenu existant.
+6. cat fichier1.txt : Affiche le contenu du 'fichier1.txt' dans le terminal.
+7. cp fichier1.txt copie.txt : Duplique fichier1.txt sous le nom copie.txt
 
-[Paragraphe expliquant les notions théoriques et pratiques que tu as comprises grâce à ce lab.]
+<img width="679" height="415" alt="image" src="https://github.com/user-attachments/assets/be2ced5f-c22a-4efc-ac14-765a5734d3c0" />
 
-## Difficultés rencontrées
+1. mv copie.txt renomme.txt : Renomme le fichier copie.txt en renomme.txt
+2. ls -l : Liste les fichiers présent, je remarque que mon fichier anciennement copie.txt a bien été modifié en renomme.txt
+3. rm renomme.txt : Supprime définitivement le fichier 'renomme.txt'. Cette action est irréversible, il n'existe pas de corbeille dans les systemes Linux.
+4. ls -l : Je remarque que renomme.txt n'apparait plus dans mon fichier, il a bien été éffacé.
 
-[Le problème ou la confusion rencontrée lors de la manipulation, et l'explication technique de comment tu l'as résolu ou compris.]
+Etape 3.1 : Créez un sous-dossier 'Archives' dans "Mon_Portfolio", puis déplacez le fichier1.txt
 
-## Conclusion
+<img width="461" height="45" alt="image" src="https://github.com/user-attachments/assets/5fa7acd9-8cb7-4aec-9db8-38ee7120e19d" />
 
-[Bilan global du laboratoire et validation des objectifs fixés.]
+1. cd ~ : Retourne au dossier de base, 'home'
+2. mkdir Mon_Portfolio/Archives : Créer un sous dossier 'Archives'.
+
+<img width="560" height="23" alt="image" src="https://github.com/user-attachments/assets/6bb5ecbc-b5b2-4a7e-9ed8-5d8591885dd1" />
+
+3. mv fichier1.txt Archives : Déplace le fichier1.txt dans Archives.
+
+<img width="465" height="96" alt="image" src="https://github.com/user-attachments/assets/9921d60f-cd36-4c4a-bd0c-83861dc85d4c" />
+
+Rapide vérification : 
+cd Archives : J'entre dans mon sous-dossier 'Archives'
+ls : Liste les fichiers présent dans 'Archives' , fichier1.txt est présent, l'exercice est réussie. 
+
+
+## Etape 4 : Utilisateurs et droits : 
+
+<img width="847" height="311" alt="image" src="https://github.com/user-attachments/assets/13a99466-8ba7-4e06-9bbe-784393993bb5" />
+
+Description de chaques étapes : 
+
+1. id : Renseigne l'id de l'utilisateur actuel (ici 1000, ce sont mes droits).
+2. cd ~/Mon_Portfolio/Archives : Je me déplace dans le sous dossier pour arriver a 'Archives'
+3. ls -l fichier1.txt : Affiche les permissions et les détails initiaux du fichier (-rw-rw-r--)
+4. chmod 600 fichier1.txt : Modifie les permissions pour donner lecture et écriture uniquement au propriétaire (rw-) et rien aux autres (---).
+5. ls -l fichier1.txt : Vérifie l'applcation des nouveaux droits (-rw-------)
+6. sudo whoami : Exécute la commande whoami avec les privilèges administrateur pour confirmer l'identité root après authentification par mot de passe.
+
+## Etape 5 : Processus , Ressources et réseau.
+
+Commande utilisée et ce qu'elles indique : 
+
+ps aux | head : Liste les processus en cours d'éxécution.
+
+<img width="904" height="276" alt="image" src="https://github.com/user-attachments/assets/e257056e-d5a7-4426-b317-cd0e19a8af9d" />
+
+top : Affiche en temps réel les processus en cours d'exécutions et les ressources système consommées. 
+
+<img width="741" height="628" alt="image" src="https://github.com/user-attachments/assets/782c58e4-b310-4c99-8623-fa03e4ce26ba" />
+
+df -h : Espace disque utilisé et disponnible.
+
+<img width="580" height="264" alt="image" src="https://github.com/user-attachments/assets/f6d63ea5-5c57-4647-8db6-364f47c56be7" />
+
+free -h : C'est l'utilisation de la mémoire vive. 
+
+<img width="521" height="89" alt="image" src="https://github.com/user-attachments/assets/8879ff67-16e0-4bed-80e2-9d81194096d0" />
+
+uptime : Compteur depuis dernier redemarage 
+
+<img width="521" height="89" alt="image" src="https://github.com/user-attachments/assets/9c7e9190-18b6-42b5-98de-66255a26bce2" />
+
+ip a : Configuration des interfaces réseau actives.
+
+<img width="521" height="89" alt="image" src="https://github.com/user-attachments/assets/e3fd6134-7f16-42e0-b9d1-26bfaa16e199" />
+
+## Etape 6 : Installer un logiciel.
+
+<img width="630" height="468" alt="image" src="https://github.com/user-attachments/assets/fb2dbd9d-08d0-4125-bd74-d68328abb917" />
+
+1. Sudo apt update : Actualise la liste des paquets disponibles.
+2. sudo apt install tree : Install le paquet utilitaire nommé 'tree'
+3. tree ~/Mon_Portfolio : Affiche l'arborescence du dossier spécifié. (C'est une visualisation de ce qu'on viens de telecharger.
+4. A noter que sur ce screen, L'utilitaire 'tree' étant déjà télécharger, il a rechercher a la place une versions + récente de 'tree', ce qui n'était pas le cas.
+
+## Etape 7 : Nettoyage (Supprimer l'espace de travail créer pendant cette présentation)
+
+
+<img width="396" height="93" alt="image" src="https://github.com/user-attachments/assets/11ee8017-893e-4d30-a701-6af0d4550b90" />
+
+rm -r Mon_Portfolio : Supprime le dossier Portfolio ainsi que tout les fichiers, et sous dossier relier au chemin Mon_Portfolio
+cd Mon_Portfolio : Essais d'accéder a 'Mon_Portfolio' ce qui n'est plus possible car il vient d'être supprimer.
+Suppression confirmer.
+
 
 ## Fin de ce laboratoire
