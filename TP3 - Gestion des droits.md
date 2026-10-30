@@ -47,7 +47,7 @@ Sous-etape 2 : Essayez d'executer le fichier script.sh
 2. ls -l : Confirme que je viens de retirer le 'read' pour le groupe, j'observe que -rwxrw-r-- deviens rws-w-r-- .
 3. J'ai retirer l'accès au 'read' pour le groupe.
 
-## Sous étape 3 : Changez le propriétaire du fichier : 
+Sous étape 3 : Changez le propriétaire du fichier : 
 
 <img width="880" height="192" alt="image" src="https://github.com/user-attachments/assets/d753587b-b451-4061-95d9-fcc8935d9e05" />
 
@@ -55,7 +55,7 @@ Sous-etape 2 : Essayez d'executer le fichier script.sh
 2. ls -l : Permet de vérifier que le propriétaire du fichier à changer en 'root'
 3. Le propriétaire est passer de 'thibault' en 'root'
 
-## Sous étape 4 : Utilisation de sudo ! 
+Sous étape 4 : Utilisation de sudo ! 
 
 <img width="900" height="1013" alt="image" src="https://github.com/user-attachments/assets/a62d23b5-13b6-4c93-b6aa-07373556d34f" />
 
