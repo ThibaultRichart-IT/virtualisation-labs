@@ -106,5 +106,48 @@ Sous Etape 10 : Déplacer le fichier exo1 dans le répertoire TP1 et supprimer l
 6. rm -r seance_1 seance_2 : Supprime vraiment seance_1 et seance_2 sans message d'erreur avec le 'r' de récursif
 7. ls : Confirme que c'est bien surppimé.
 
-Etape 2 : Protection des fichiers 
+### Etape 2 : Protection des fichiers 
+
+Sous Etape 1 : Créer un répertoire 'essai_droit' et vérifier quels sont les droits par défaut de ce répertoire?
+
+<img width="622" height="620" alt="image" src="https://github.com/user-attachments/assets/e5982ae9-b282-48ea-a33e-f1c1b4809b2a" />
+
+ls - : Affiche les infos des dossiers, dont essai_droit, je remarque les droits suivant drwx rwx r-x , le propriétaire peux lire, écrire et éxecuter, le groupe peux également lire écrire éxecuter, et les autres peuvent seulement lire et executer.
+On peux aussi lire ceci en 775 (7 = rwx 7 = rwx 5 = r-x)
+
+Sous Etape 2 : Faire différentes commandes pour changer les droits, et vérifier comment cela réagit : 
+Listes des droits a activer : 752 , 521 , 214 , 350.
+
+<img width="681" height="799" alt="image" src="https://github.com/user-attachments/assets/28c9d25d-ebce-4359-8819-2231ae5e26d8" />
+
+1. chmod 752 ~/essai_droit : change les droits du répertoire en rwx r-x -w-
+
+<img width="713" height="702" alt="image" src="https://github.com/user-attachments/assets/94c52dd2-e134-4759-9679-e5f4c71b5b78" />
+
+1. chmod 521 ~/essai_droit : change les droits du répertoire en r-x -w- --x
+
+   
+<img width="661" height="791" alt="image" src="https://github.com/user-attachments/assets/d74b3fe9-c826-49c6-819c-058bc5faa3ba" />
+
+1. chmod 214 ~/essai_droit : change les droits du répertoire en -w- --x r--
+
+<img width="680" height="808" alt="image" src="https://github.com/user-attachments/assets/2daafef7-b1b2-468f-baea-eba2ea752158" />
+
+1. chmod 350 ~/essai_droit : change les droits du répertoire en -wx r-x ---
+2. Les droits change a chaque fois en fonction de ce que je lui ordonne de faire.
+
+Sous Etape 3 : créer un fichier droit dans le répertoire 'essai_droit' vérifier ses droits par défaut.
+
+<img width="667" height="305" alt="image" src="https://github.com/user-attachments/assets/1fd40948-4746-4b2c-a82b-90a0059b6563" />
+
+1. mkdir droit : créer le dossier droit.
+2. ls -l essais d'accéder aux infos en mode droit. Echec! je n'ai pas les droit, je passe en mode sudo pour forcer le visionnage.
+3. sudo ls -l : Après avoir saisis le mot de passe, je peux voir les accès. Il est en code 700
+
+## Question D du TP3.doc pour la suite!
+
+
+
+
+
 
